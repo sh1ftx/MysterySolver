@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysterySolver - Dark Edition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Estilo sombrio e gótico */
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif; /* Fonte com estilo clássico e misterioso */
+            background-color: #0d0d0d; /* Preto profundo */
+            color: #d4d4d4; /* Cinza claro para contraste */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a; /* Preto com leve contraste */
+            border-bottom: 2px solid #333;
+            color: #e63946; /* Vermelho sangue */
+            text-shadow: 0 0 10px #e63946; /* Efeito de brilho */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px);
+        }
+
+        #terminal {
+            width: 80%;
+            max-width: 800px;
+            background-color: #1a1a1a; /* Fundo escuro */
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.5); /* Brilho vermelho */
+        }
+
+        #output {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #0d0d0d; /* Preto profundo */
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace; /* Estilo de terminal */
+        }
+
+        #input {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #output div {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MysterySolver</h1>
+        <p>Uncover the truth... if you dare.</p>
+    </header>
+    <main>
+        <section id="terminal">
+            <div id="output"></div>
+            <input type="text" id="input" placeholder="Type your command..." autofocus>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MysterySolver. The truth is waiting.</p>
+    </footer>
+    <script>
+        // Script para funcionalidade do terminal
+        document.addEventListener('DOMContentLoaded', () => {
+            const output = document.getElementById('output');
+            const input = document.getElementById('input');
+
+            const messages = [
+                "Welcome, Detective. Type 'start' to begin your investigation.",
+                "You can type commands like 'examine', 'interrogate', or 'help'."
+            ];
+
+            // Exibe mensagens iniciais
+            messages.forEach(msg => appendMessage(msg));
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const command = input.value.trim();
+                    if (command) {
+                        appendMessage(`> ${command}`); // Mostra o comando digitado
+                        handleCommand(command); // Processa o comando
+                        input.value = ''; // Limpa o campo de entrada
+                    }
+                }
+            });
+
+            function appendMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = message;
+                output.appendChild(messageElement);
+                output.scrollTop = output.scrollHeight; // Auto-scroll para o final
+            }
+
+            function handleCommand(command) {
+                if (command === 'start') {
+                    appendMessage("The case begins. You are at the crime scene.");
+                } else if (command === 'help') {
+                    appendMessage("Available commands: start, examine, interrogate, help.");
+                } else if (command === 'examine') {
+                    appendMessage("You found a mysterious object. Type 'interrogate' to question suspects.");
+                } else if (command === 'interrogate') {
+                    appendMessage("Suspect: 'I was at home during the incident.'");
+                } else {
+                    appendMessage(`Unknown command: ${command}`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

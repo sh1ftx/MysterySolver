@@ -1,0 +1,91 @@
+/* Estilo geral */
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif; /* Fonte clássica e misteriosa */
+  background-color: #0d0d0d; /* Preto profundo */
+  color: #d4d4d4; /* Cinza claro para contraste */
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a; /* Preto com leve contraste */
+  border-bottom: 2px solid #333;
+  color: #e63946; /* Vermelho sangue */
+  text-shadow: 0 0 10px #e63946; /* Efeito de brilho */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #d4d4d4;
+}
+
+/* Área principal */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+
+/* Terminal */
+#terminal {
+  width: 80%;
+  max-width: 800px;
+  background-color: #1a1a1a; /* Fundo escuro */
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.5); /* Brilho vermelho */
+}
+
+/* Área de saída do terminal */
+#output {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #0d0d0d; /* Preto profundo */
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #d4d4d4;
+  font-family: 'Courier New', Courier, monospace; /* Estilo de terminal */
+}
+
+/* Campo de entrada do terminal */
+#input {
+  width: 100%;
+  padding: 10px;
+  background-color: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #d4d4d4;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilo para o texto digitado no terminal */
+#output div {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1a1a1a;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+  font-style: italic;
+}
