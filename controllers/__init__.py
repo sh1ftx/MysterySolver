@@ -1,1 +1,1 @@
-# This file is intentionally left blank.
+# This module will handle game logic and interactions with the AI.

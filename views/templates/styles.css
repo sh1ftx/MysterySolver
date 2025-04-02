@@ -89,3 +89,34 @@ footer p {
   margin: 0;
   font-style: italic;
 }
+
+/* Área de saída do terminal */
+#output {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #0d0d0d; /* Preto profundo */
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #e63946; /* Vermelho sangue */
+  font-family: 'Courier New', Courier, monospace; /* Estilo de terminal */
+}
+
+/* Campo de entrada do terminal */
+#input {
+  width: 100%;
+  padding: 10px;
+  background-color: #0d0d0d; /* Preto profundo */
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #e63946; /* Vermelho sangue */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilo para o texto digitado no terminal */
+#output div {
+  margin-bottom: 5px;
+  line-height: 1.5;
+  color: #e63946; /* Vermelho sangue para cada mensagem exibida */
+}

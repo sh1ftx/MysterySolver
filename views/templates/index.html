@@ -100,14 +100,13 @@
         <p>&copy; 2025 MysterySolver. The truth is waiting.</p>
     </footer>
     <script>
-        // Script para funcionalidade do terminal
         document.addEventListener('DOMContentLoaded', () => {
             const output = document.getElementById('output');
             const input = document.getElementById('input');
 
             const messages = [
-                "Welcome, Detective. Type 'start' to begin your investigation.",
-                "You can type commands like 'examine', 'interrogate', or 'help'."
+                "A escuridão envolve o caso. Digite 'iniciar' para começar sua investigação.",
+                "Escolha suas ações com cuidado... Digite 'ajuda' para ver os comandos disponíveis."
             ];
 
             // Exibe mensagens iniciais
@@ -132,16 +131,16 @@
             }
 
             function handleCommand(command) {
-                if (command === 'start') {
-                    appendMessage("The case begins. You are at the crime scene.");
-                } else if (command === 'help') {
-                    appendMessage("Available commands: start, examine, interrogate, help.");
-                } else if (command === 'examine') {
-                    appendMessage("You found a mysterious object. Type 'interrogate' to question suspects.");
-                } else if (command === 'interrogate') {
-                    appendMessage("Suspect: 'I was at home during the incident.'");
+                if (command === 'iniciar') {
+                    appendMessage("O caso começa. Você está na cena do crime. O silêncio é perturbador.");
+                } else if (command === 'ajuda') {
+                    appendMessage("Comandos disponíveis: iniciar, examinar, interrogar, ajuda.");
+                } else if (command === 'examinar') {
+                    appendMessage("Você encontrou um objeto misterioso. Algo não parece certo...");
+                } else if (command === 'interrogar') {
+                    appendMessage("Suspeito: 'Eu estava em casa durante o incidente.' A voz dele treme.");
                 } else {
-                    appendMessage(`Unknown command: ${command}`);
+                    appendMessage(`Comando desconhecido: ${command}`);
                 }
             }
         });
