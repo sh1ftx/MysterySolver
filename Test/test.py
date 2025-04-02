@@ -1,3 +1,5 @@
+# Essa parte é apenas para testar implementações específicas 
+
 import google.generativeai as genai
 
 # Configurar API Key
